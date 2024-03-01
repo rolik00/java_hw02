@@ -3,6 +3,7 @@ import java.util.*;
 public class Main
 {
     private FileInputStream input;
+    private PrintWriter output;
     private String in_filepath, out_filepath;
     private FileReader reader;
     private static int size = 52, cnt = 26;
@@ -53,7 +54,7 @@ public class Main
         try
         {
             FileWriter fileWriter = new FileWriter(out_filepath);
-            PrintWriter printWriter = new PrintWriter(fileWriter);
+            output = new PrintWriter(fileWriter);
             int c;
             for(int i = 0; i < size; i++) {
                 if (i < cnt) 
@@ -65,9 +66,9 @@ public class Main
                     c = i - 26 + 'a';
                 }
                 if (dict[i] != 0)
-                    printWriter.print((char) c + " : " + dict[i] + "\n");
+                    output.print((char) c + " : " + dict[i] + "\n");
             }
-            printWriter.close();
+            output.close();
         }
         catch (IOException ex)
         {
