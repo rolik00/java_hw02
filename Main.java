@@ -56,7 +56,8 @@ public class Main
             FileWriter fileWriter = new FileWriter(out_filepath);
             output = new PrintWriter(fileWriter);
             int c;
-            for(int i = 0; i < size; i++) {
+            for(int i = 0; i < size; i++) 
+            {
                 if (i < cnt) 
                 {
                     c = i + 'A';
@@ -66,7 +67,9 @@ public class Main
                     c = i - 26 + 'a';
                 }
                 if (dict[i] != 0)
+                {
                     output.print((char) c + " : " + dict[i] + "\n");
+                }
             }
             output.close();
         }
